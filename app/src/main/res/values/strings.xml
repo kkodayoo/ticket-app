@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">toucan-vinyl</string>
+    <string name="name_label">Name</string>
+    <string name="password_label">Password</string>
+    <string name="sign_in_button">Sign-In</string>
+    <string name="klik_di_sini">Klik Di Sini</string>
+    <string name="kembali">Kembali</string>
+    <string name="ok">OK</string>
+</resources>
