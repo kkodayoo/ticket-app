@@ -8,4 +8,6 @@
     <string name="ok">OK</string>
     <string name="lokasi_konser">Lokasi konser</string>
     <string name="waktu_konser">Waktu Konser</string>
+    <string name="hey">Hey,</string>
+    <string name="search">Search</string>
 </resources>

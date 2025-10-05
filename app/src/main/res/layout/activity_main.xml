@@ -10,7 +10,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/headerCard"
-        android:layout_width="320dp"
+        android:layout_width="150dp"
         android:layout_height="64dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
@@ -47,9 +47,9 @@
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/robot_regular"
-                android:text="Hey,"
+                android:text="@string/hey"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +62,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/name_label"
                 android:textColor="@color/white"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -86,7 +86,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="4dp"
-            android:text="Search"
+            android:text="@string/search"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +103,12 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBar">
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hihgjack"
+            android:scaleType="centerCrop"
+            />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -114,7 +119,12 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/cardGenre"
         app:layout_constraintTop_toBottomOf="@+id/searchBar" >
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arcticMonkey505"
+            android:scaleType="centerCrop"
+            />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -124,7 +134,14 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/cardGenre2"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBar">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ado"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
 
 
     <TextView
@@ -289,5 +306,50 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/bangunanButton"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:text="Bangun"
+        android:textSize="11sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/headerCard"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/custom1Button"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:text="custom1"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/headerCard"
+        app:layout_constraintTop_toBottomOf="@+id/bangunanButton" />
+
+    <Button
+        android:id="@+id/custom2Button"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:text="custom2"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bangunanButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16dp"
+        android:text="login"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/custom1Button"
+        app:layout_constraintTop_toBottomOf="@id/custom2Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
