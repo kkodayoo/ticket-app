@@ -1,36 +1,35 @@
-package com.example.toucan_vinyl.tugasPertemuan3
+package com.example.toucan_vinyl.tugasPertemuan4
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.toucan_vinyl.MainActivity
 import com.example.toucan_vinyl.R
-import com.example.toucan_vinyl.databinding.ActivityLoginScreenBinding
+import com.example.toucan_vinyl.databinding.ActivityDashboardBinding
 
-class LoginScreen : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginScreenBinding
+class Dashboard : AppCompatActivity() {
+    private lateinit var binding: ActivityDashboardBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityLoginScreenBinding.inflate(layoutInflater)
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.signinbtn.setOnClickListener {
-            val username = binding.usernameInput.text.toString()
-            val password = binding.passwordInput.text.toString()
-            // posisi pemanggilan salah
-//            intent.putExtra("username", username)
-//            intent.putExtra("password", password)
-            val intent = Intent(this, WelcomePage::class.java)
-            intent.putExtra("username", username)
-            intent.putExtra("password", password)
+        val username = intent.getStringExtra("username")
+        Log.e("Dashboard", "Username: $username")
+        binding.nameText.text = "$username"
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.getStringExtra("username")
+            intent.putExtra("username", "$username")
             startActivity(intent)
         }
     }

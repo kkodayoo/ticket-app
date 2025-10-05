@@ -12,25 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Toucanvinyl">
         <activity
-            android:name=".tugasPertemuan4.dashboard"
+            android:name=".tugasPertemuan4.Dashboard"
             android:exported="true" />
         <activity
             android:name=".tugasPertemuan4.termsCondition"
             android:exported="true" />
         <activity
-            android:name=".tugasPertemuan4.detailArtist"
+            android:name=".tugasPertemuan4.DetailArtist"
             android:exported="true" />
         <activity
             android:name=".tugasPertemuan3.WelcomePage"
             android:exported="true" />
         <activity
             android:name=".tugasPertemuan3.LoginScreen"
-            android:exported="true"/>
-        <activity
-            android:name=".tugasPertemuan2.RumusBangunan"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".tugasPertemuan2.RumusBangunan"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

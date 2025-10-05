@@ -26,7 +26,7 @@ class RumusBangunan : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        val username = intent.getStringExtra("username")
         // Persegi
         val panjangPersegi: EditText = findViewById(R.id.panjangPersegi)
         val lebarPersegi: EditText = findViewById(R.id.lebarPersegi)
@@ -71,6 +71,8 @@ class RumusBangunan : AppCompatActivity() {
         }
         binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.getStringExtra("username")
+            intent.putExtra("username", "$username")
             startActivity(intent)
         }
     }
