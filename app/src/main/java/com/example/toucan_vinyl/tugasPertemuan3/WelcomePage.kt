@@ -1,6 +1,5 @@
 package com.example.toucan_vinyl.tugasPertemuan3
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -13,7 +12,6 @@ import com.example.toucan_vinyl.databinding.ActivityWelcomePageBinding
 
 class WelcomePage : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomePageBinding
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

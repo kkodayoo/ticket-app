@@ -57,8 +57,8 @@
 
             <TextView
                 android:id="@+id/heyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="41dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/robot_regular"
