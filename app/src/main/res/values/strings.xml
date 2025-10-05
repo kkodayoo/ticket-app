@@ -6,4 +6,6 @@
     <string name="klik_di_sini">Klik Di Sini</string>
     <string name="kembali">Kembali</string>
     <string name="ok">OK</string>
+    <string name="lokasi_konser">Lokasi konser</string>
+    <string name="waktu_konser">Waktu Konser</string>
 </resources>

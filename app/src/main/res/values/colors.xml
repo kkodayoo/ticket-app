@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red_button">#FF453A</color>
     <color name="grey_transparent">#4EB1ADAD</color>
+    <color name="semitransparent">#B7D3D3D3</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>
