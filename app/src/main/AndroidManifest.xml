@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Toucanvinyl">
         <activity
+            android:name=".tugasPertemuan4.dashboard"
+            android:exported="false" />
+        <activity
             android:name=".tugasPertemuan4.termsCondition"
             android:exported="false" />
         <activity
