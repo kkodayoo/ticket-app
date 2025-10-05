@@ -60,6 +60,7 @@
                 android:layout_marginTop="64dp"
                 android:text="Bangun"
                 android:textSize="11sp"
+                android:backgroundTint="@color/red_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +74,7 @@
                 android:text="custom1"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="@color/red_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bangunanButton" />
 
@@ -81,6 +83,7 @@
                 android:layout_width="95dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red_button"
                 android:text="custom2"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +97,7 @@
                 android:layout_marginTop="20dp"
                 android:text="login"
                 android:textSize="11sp"
+                android:backgroundTint="@color/red_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/custom2Button" />

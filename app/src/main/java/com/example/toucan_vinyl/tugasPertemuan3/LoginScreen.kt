@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.toucan_vinyl.MainActivity
 import com.example.toucan_vinyl.R
 import com.example.toucan_vinyl.databinding.ActivityLoginScreenBinding
 
@@ -25,6 +26,10 @@ class LoginScreen : AppCompatActivity() {
             val username = binding.usernameInput.text.toString()
             val password = binding.passwordInput.text.toString()
             val intent = Intent(this, WelcomePage::class.java)
+            startActivity(intent)
+        }
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

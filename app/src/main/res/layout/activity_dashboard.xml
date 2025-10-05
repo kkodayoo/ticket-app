@@ -8,6 +8,21 @@
     android:layout_height="match_parent"
     tools:context=".tugasPertemuan4.dashboard">
 
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="back"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_bold"
+        android:backgroundTint="@color/transparent"
+        android:textColor="@color/red_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/headerCard"
         android:layout_width="150dp"
@@ -122,7 +137,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arcticMonkey505"
+            android:src="@drawable/timely"
             android:scaleType="centerCrop"
             />
     </androidx.cardview.widget.CardView>
