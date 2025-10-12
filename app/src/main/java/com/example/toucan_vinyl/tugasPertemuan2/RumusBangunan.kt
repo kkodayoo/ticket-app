@@ -3,6 +3,7 @@ package com.example.toucan_vinyl.tugasPertemuan2
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -13,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.toucan_vinyl.MainActivity
 import com.example.toucan_vinyl.R
 import com.example.toucan_vinyl.databinding.ActivityRumusBangunanBinding
+import com.example.toucan_vinyl.tugasPertemuan5.WebViewActivity
 
 class RumusBangunan : AppCompatActivity() {
     private lateinit var binding: ActivityRumusBangunanBinding
@@ -74,6 +76,25 @@ class RumusBangunan : AppCompatActivity() {
             intent.getStringExtra("username")
             intent.putExtra("username", "$username")
             startActivity(intent)
+        }
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Rumus Bangunan"
+            subtitle = "Menghitung Bangun Ruang"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

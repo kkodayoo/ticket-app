@@ -1,324 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".tugasPertemuan4.Dashboard">
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
+    <!-- AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="back"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_bold"
-        android:backgroundTint="@color/transparent"
-        android:textColor="@color/red_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/headerCard"
-        android:layout_width="150dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/red_button"
+            app:layout_scrollFlags="scroll|snap"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Konten utama -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- Header -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCard"
+            android:layout_width="150dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    app:cardCornerRadius="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/app_icon" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/heyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/robot_regular"
+                    android:text="@string/hey"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/name_label"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Search Bar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchBar"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/grey_transparent"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="@id/headerCard"
+            app:layout_constraintTop_toBottomOf="@id/headerCard">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Genre Card 1 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGenre"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/searchBar"
+            app:layout_constraintTop_toBottomOf="@id/searchBar">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hihgjack" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Genre Card 2 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGenre2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@id/cardGenre"
+            app:layout_constraintTop_toTopOf="@id/cardGenre">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/timely" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Genre Card 3 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGenre3"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@id/cardGenre2"
+            app:layout_constraintTop_toTopOf="@id/cardGenre">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ado" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- What's Coming -->
+        <TextView
+            android:id="@+id/whatsComingText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="What's Coming to"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/searchBar"
+            app:layout_constraintTop_toBottomOf="@id/cardGenre" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                app:cardCornerRadius="32dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+        <!-- Album Card 1 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="180dp"
+            android:layout_height="430dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/transparent"
+            app:layout_constraintStart_toStartOf="@id/whatsComingText"
+            app:layout_constraintTop_toBottomOf="@id/whatsComingText">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="350dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/app_icon" />
-            </androidx.cardview.widget.CardView>
+                    android:src="@drawable/king_gnu" />
 
-            <TextView
-                android:id="@+id/heyText"
-                android:layout_width="41dp"
-                android:layout_height="27dp"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robot_regular"
-                android:text="@string/hey"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="King Gnu - Sympa"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_bold" />
 
-            <TextView
-                android:id="@+id/nameText"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lokasi_konser"
+                    android:textColor="@color/semitransparent"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waktu_konser"
+                    android:textColor="@color/semitransparent"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Album Card 2 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="180dp"
+            android:layout_height="430dp"
+            android:layout_marginStart="24dp"
+            android:backgroundTint="@color/transparent"
+            app:layout_constraintStart_toEndOf="@id/cardView3"
+            app:layout_constraintTop_toTopOf="@id/cardView3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/name_label"
-                android:textColor="@color/white"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/searchBar"
-        android:layout_width="320dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/grey_transparent"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headerCard">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/marunouchisadistic" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:text="@string/search"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="丸の内サディスティック - 椎名林檎"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_bold" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardGenre"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hihgjack"
-            android:scaleType="centerCrop"
-            />
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lokasi_konser"
+                    android:textColor="@color/semitransparent"
+                    android:textSize="12sp" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardGenre2"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/cardGenre"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/timely"
-            android:scaleType="centerCrop"
-            />
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waktu_konser"
+                    android:textColor="@color/semitransparent"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardGenre3"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/cardGenre2"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ado"
-            android:scaleType="centerCrop"
-            />
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <TextView
-        android:id="@+id/whatsComingText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="What's Coming to"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@id/cardGenre" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="180dp"
-        android:layout_height="430dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/whatsComingText"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/albumCover"
-                android:layout_width="180dp"
-                android:layout_height="350dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/king_gnu" />
-
-            <TextView
-                android:id="@+id/albumName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="King Gnu - Sympa"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:singleLine="true"
-                android:ellipsize="none"
-                android:scrollHorizontally="true"
-                android:marqueeRepeatLimit="marquee_forever"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/albumCover" />
-
-            <TextView
-                android:id="@+id/locationText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robot_regular"
-                android:text="@string/lokasi_konser"
-                android:textColor="@color/semitransparent"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/albumName" />
-
-            <TextView
-                android:id="@+id/timeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robot_regular"
-                android:text="@string/waktu_konser"
-                android:textColor="@color/semitransparent"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/locationText" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4"
-        android:layout_width="180dp"
-        android:layout_height="430dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/whatsComingText"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/albumCover2"
-                android:layout_width="180dp"
-                android:layout_height="350dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/marunouchisadistic" />
-
-            <TextView
-                android:id="@+id/albumName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="丸の内サディスティック - 椎名林檎"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:singleLine="true"
-                android:ellipsize="none"
-                android:scrollHorizontally="true"
-                android:marqueeRepeatLimit="marquee_forever"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/albumCover2" />
-
-            <TextView
-                android:id="@+id/locationText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robot_regular"
-                android:text="@string/lokasi_konser"
-                android:textColor="@color/semitransparent"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/albumName2" />
-
-            <TextView
-                android:id="@+id/timeText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/robot_regular"
-                android:text="@string/waktu_konser"
-                android:textColor="@color/semitransparent"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/locationText2" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
