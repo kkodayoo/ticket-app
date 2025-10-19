@@ -28,6 +28,10 @@
         <activity
             android:name=".tugasPertemuan5.WebViewActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".tugasPertemuan4.Dashboard2"
+            android:exported="true" />
         <activity
             android:name=".tugasPertemuan4.Dashboard"
             android:exported="false" />

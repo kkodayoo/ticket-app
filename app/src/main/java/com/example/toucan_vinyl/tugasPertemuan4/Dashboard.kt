@@ -1,23 +1,19 @@
 package com.example.toucan_vinyl.tugasPertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.toucan_vinyl.MainActivity
 import com.example.toucan_vinyl.R
 import com.example.toucan_vinyl.databinding.ActivityDashboardBinding
-import com.example.toucan_vinyl.tugasPertemuan5.WebViewActivity
 import com.example.toucan_vinyl.tugasPertemuan6.JpopFragment
 import com.example.toucan_vinyl.tugasPertemuan6.RecommendFragment
-import com.example.toucan_vinyl.tugasPertemuan6.VocaloidFragment
+import com.example.toucan_vinyl.tugasPertemuan6.UtaFragment
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -41,7 +37,7 @@ class Dashboard : AppCompatActivity() {
         }
 
         binding.cardGenre3.setOnClickListener {
-            replaceFragment(VocaloidFragment())
+            replaceFragment(UtaFragment())
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {

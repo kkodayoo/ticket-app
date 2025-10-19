@@ -35,7 +35,7 @@ class WebViewActivity : AppCompatActivity() {
         binding.webView.apply {
             webViewClient = WebViewClient()
             settings.javaScriptEnabled = true
-            loadUrl("https://clubgnu.com/s/n90/page/sp_tour2026")
+            loadUrl("https://ib.eplus.jp/osaka")
 
             setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
                 if (scrollY > oldScrollY) {
