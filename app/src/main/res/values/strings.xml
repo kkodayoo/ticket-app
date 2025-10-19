@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">toucan-vinyl</string>
     <string name="name_label">Name</string>
     <string name="password_label">Password</string>
@@ -12,4 +12,9 @@
     <string name="search">Search</string>
     <string name="kinggnu_desc">King Gnu is a Japanese band formed in 2013. It consists of Daiki Tsuneta (vocalist and guitarist), Satoru Iguchi (vocalist and keyboardist), Kazuki Arai (bassist) and Yu Seki (drummer). The band\'s main songwriter is Daiki Tsuneta, who also performs as part of the creative collective Millennium Parade.</string>
     <string name="get_started">Get Started</string>
+    <string name="appName">CONCERTO</string>
+    <string name="by_rafli_mulki">by Rafli Mulki</string>
+    <string name="backnumberdesc">Back Number (バックナンバー; Bakku Nambā) is a Japanese rock power trio formed in 2004. The band consists of Iyori Shimizu (lead vocals, guitar), Kazuya Kojima (bass guitar, backing vocals), and Hisashi Kurihara (drums, percussion). The group signed to independent record label Idolsmith Recordings in 2009 and released their debut EP Nogashita Sakana (逃した魚, Fish Set Free) (2009) and studio album Ato no Matsuri (あとのまつり, Too Late) (2010). They signed to Universal Sigma in 2011. The band have a major cult following in Japan. The group\'s biggest hit is "Christmas Song" [ja], which peaked at number-one for three weeks on the Japan Hot 100 chart, and was later certified million by the Recording Industry Association of Japan. Their first compilation album, Encore (2016), reached number one on the Billboard Japan Hot Album for two consecutive weeks in 2016 and also ranked number five on the Oricon yearly best-selling album chart of 2017. In 2018, back number successfully held a Dome Tour titled “stay with you”, including a 2-night-concert in Tokyo Dome. All tickets for 5 concerts are sold out within 2 hours, mobilized over 45,000 guests per concert.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

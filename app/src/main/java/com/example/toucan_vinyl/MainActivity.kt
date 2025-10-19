@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -50,11 +51,14 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("Konfirmasi")
                 .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
                     dialog.dismiss()
                     Log.e("Info Dialog","Anda memilih Ya!")
                     val intent = Intent(this, LoginScreen::class.java)
-                    startActivity(intent)
                     finish()
+                    startActivity(intent)
                 }
                 .setNegativeButton("Batal") { dialog, _ ->
                     dialog.dismiss()

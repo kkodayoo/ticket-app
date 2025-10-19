@@ -10,10 +10,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.toucan_vinyl.MainActivity
 import com.example.toucan_vinyl.R
 import com.example.toucan_vinyl.databinding.ActivityDashboardBinding
 import com.example.toucan_vinyl.tugasPertemuan5.WebViewActivity
+import com.example.toucan_vinyl.tugasPertemuan6.JpopFragment
+import com.example.toucan_vinyl.tugasPertemuan6.RecommendFragment
+import com.example.toucan_vinyl.tugasPertemuan6.VocaloidFragment
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -26,6 +30,18 @@ class Dashboard : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        replaceFragment(RecommendFragment())
+        binding.cardGenre.setOnClickListener {
+            replaceFragment(RecommendFragment())
+        }
+
+        binding.cardGenre2.setOnClickListener {
+            replaceFragment(JpopFragment())
+        }
+
+        binding.cardGenre3.setOnClickListener {
+            replaceFragment(VocaloidFragment())
         }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
@@ -54,5 +70,11 @@ class Dashboard : AppCompatActivity() {
 
             else -> super.onOptionsItemSelected(item)
         }
+    }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

@@ -14,25 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Toucanvinyl">
         <activity
+            android:name=".tugasPertemuan6.detailBackNumber"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tugasPertemuan5.WebViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tugasPertemuan4.Dashboard"
-            android:exported="true" />
-        <activity
-            android:name=".tugasPertemuan4.termsCondition"
-            android:exported="true" />
-        <activity
-            android:name=".tugasPertemuan4.DetailArtist"
-            android:exported="true" />
-        <activity
-            android:name=".tugasPertemuan3.WelcomePage"
-            android:exported="true" />
-        <activity
-            android:name=".tugasPertemuan3.LoginScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,11 +26,29 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".tugasPertemuan5.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tugasPertemuan4.Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".tugasPertemuan4.termsCondition"
+            android:exported="false" />
+        <activity
+            android:name=".tugasPertemuan4.DetailArtist"
+            android:exported="false" />
+        <activity
+            android:name=".tugasPertemuan3.WelcomePage"
+            android:exported="false" />
+        <activity
+            android:name=".tugasPertemuan3.LoginScreen"
+            android:exported="false" />
+        <activity
             android:name=".tugasPertemuan2.RumusBangunan"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>
