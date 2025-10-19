@@ -196,10 +196,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="King Gnu - Sympa"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto_bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -242,10 +242,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="丸の内サディスティック - 椎名林檎"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/roboto_bold" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
