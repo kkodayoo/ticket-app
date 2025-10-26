@@ -1,60 +1,154 @@
 package com.example.toucan_vinyl.Bookmarks
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.toucan_vinyl.Home.tugasPertemuan4.DetailArtist
 import com.example.toucan_vinyl.R
+import com.example.toucan_vinyl.databinding.FragmentBookMarkBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BookMarkFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BookMarkFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentBookMarkBinding? = null
+    private val binding get() = _binding!!
+    private val bookmarkList = listOf(
+        BookmarksModel(
+            "Ado",
+            "12 Januari 2025",
+            "Tokyo Dome, Jepang",
+            R.drawable.ado
+        ),
+        BookmarksModel(
+            "King Gnu",
+            "20 Januari 2025",
+            "Osaka-Jo Hall, Jepang",
+            R.drawable.king_gnu
+        ),
+        BookmarksModel(
+            "Back Number",
+            "5 Februari 2025",
+            "Saitama Super Arena, Jepang",
+            R.drawable.backnumber
+        ),
+        BookmarksModel(
+            "A\$AP Rocky",
+            "18 Februari 2025",
+            "Madison Square Garden, USA",
+            R.drawable.asap_rocky
+        ),
+        BookmarksModel(
+            "Anri",
+            "25 Februari 2025",
+            "Nippon Budokan, Jepang",
+            R.drawable.anri
+        ),
+        BookmarksModel(
+            "Kenshi Yonezu",
+            "2 Maret 2025",
+            "Kyocera Dome, Jepang",
+            R.drawable.kenshi_yonezu
+        ),
+        BookmarksModel(
+            "Rionos",
+            "8 Maret 2025",
+            "Zepp Osaka Bayside, Jepang",
+            R.drawable.rionos
+        ),
+        BookmarksModel(
+            "Aimer",
+            "15 Maret 2025",
+            "Osaka-Jo Hall, Jepang",
+            R.drawable.aimer
+        ),
+        BookmarksModel(
+            "Yorushika",
+            "22 Maret 2025",
+            "Sendai Sun Plaza, Jepang",
+            R.drawable.yorushika
+        ),
+        BookmarksModel(
+            "YOASOBI",
+            "29 Maret 2025",
+            "Tokyo Dome, Jepang",
+            R.drawable.yoasobi
+        ),
+        BookmarksModel(
+            "Yeat",
+            "5 April 2025",
+            "Toronto Arena, Canada",
+            R.drawable.yeat
+        ),
+        BookmarksModel(
+            "Ken Carson",
+            "12 April 2025",
+            "Las Vegas Sphere, USA",
+            R.drawable.ken_carson
+        ),
+        BookmarksModel(
+            "J. Cole",
+            "19 April 2025",
+            "Staples Center, USA",
+            R.drawable.j_cole
+        ),
+        BookmarksModel(
+            "Arctic Monkeys",
+            "25 April 2025",
+            "SoFi Stadium, USA",
+            R.drawable.arcticmonkey505
+        ),
+        BookmarksModel(
+            "Playboi Carti",
+            "3 Mei 2025",
+            "Austin Music Hall, USA",
+            R.drawable.playboi_carti
+        ),
+        BookmarksModel(
+            "EGOIST",
+            "24 Mei 2025",
+            "Makuhari Messe, Jepang",
+            R.drawable.egoist
+        ),
+        BookmarksModel(
+            "Radiohead",
+            "31 Mei 2025",
+            "Wembley Stadium, UK",
+            R.drawable.radiohead
+        ),
+        BookmarksModel(
+            "RADWIMPS",
+            "7 Juni 2025",
+            "Nagoya Dome, Jepang",
+            R.drawable.radwimps
+        )
+    )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for requireContext() fragment
+        _binding = FragmentBookMarkBinding.inflate(inflater, container, false)
+        return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book_mark, container, false)
+//        return inflater.inflate(R.layout.fragment_message, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BookMarkFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BookMarkFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Bookmarks"
+        }
+        val adapter = BookmarksAdapter(requireContext(), bookmarkList)
+        binding.listBookmarksItems.adapter = adapter
+        binding.listBookmarksItems.setOnItemClickListener { _, _, position, _ ->
+            val selected = bookmarkList[position]
+            val intent = Intent(requireContext(), DetailArtist::class.java)
+            startActivity(intent)
+        }
     }
 }
