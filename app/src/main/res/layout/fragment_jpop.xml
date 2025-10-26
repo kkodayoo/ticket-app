@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".tugasPertemuan6.JpopFragment">
+    tools:context=".Home.tugasPertemuan6.JpopFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

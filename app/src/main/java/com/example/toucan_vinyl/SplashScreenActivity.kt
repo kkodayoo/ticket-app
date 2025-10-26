@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.toucan_vinyl.tugasPertemuan3.LoginScreen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -18,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -31,7 +30,7 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(2000) //simulasi pengambilan data selama 2 detik
 
-            var intent = Intent(this@SplashScreenActivity, LoginScreen::class.java)
+            var intent = Intent(this@SplashScreenActivity, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }

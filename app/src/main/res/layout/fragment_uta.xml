@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
-    tools:context=".tugasPertemuan6.UtaFragment">
+    tools:context=".Home.tugasPertemuan6.UtaFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

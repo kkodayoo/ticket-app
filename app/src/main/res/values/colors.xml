@@ -6,4 +6,5 @@
     <color name="grey_transparent">#4EB1ADAD</color>
     <color name="semitransparent">#B7D3D3D3</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="gray_dark">#3C3C43</color>
 </resources>

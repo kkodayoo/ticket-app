@@ -12,11 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.toucan_vinyl.databinding.ActivityMainBinding
-import com.example.toucan_vinyl.tugasPertemuan2.RumusBangunan
-import com.example.toucan_vinyl.tugasPertemuan3.LoginScreen
-import com.example.toucan_vinyl.tugasPertemuan4.Dashboard
-import com.example.toucan_vinyl.tugasPertemuan4.DetailArtist
-import com.example.toucan_vinyl.tugasPertemuan5.WebViewActivity
+import com.example.toucan_vinyl.Home.tugasPertemuan2.RumusBangunan
+import com.example.toucan_vinyl.Home.tugasPertemuan4.Dashboard
+import com.example.toucan_vinyl.Home.tugasPertemuan4.DetailArtist
+import com.example.toucan_vinyl.Home.tugasPertemuan5.WebViewActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -56,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     editor.apply()
                     dialog.dismiss()
                     Log.e("Info Dialog","Anda memilih Ya!")
-                    val intent = Intent(this, LoginScreen::class.java)
+                    val intent = Intent(this, AuthActivity::class.java)
                     finish()
                     startActivity(intent)
                 }

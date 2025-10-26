@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Toucanvinyl">
         <activity
-            android:name=".tugasPertemuan6.detailBackNumber"
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.tugasPertemuan6.detailBackNumber"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -26,29 +29,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tugasPertemuan5.WebViewActivity"
+            android:name=".Home.tugasPertemuan5.WebViewActivity"
             android:exported="false" />
-
         <activity
-            android:name=".tugasPertemuan4.Dashboard2"
+            android:name=".Home.tugasPertemuan4.Dashboard2"
             android:exported="true" />
         <activity
-            android:name=".tugasPertemuan4.Dashboard"
+            android:name=".Home.tugasPertemuan4.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".tugasPertemuan4.termsCondition"
+            android:name=".Home.tugasPertemuan4.termsCondition"
             android:exported="false" />
         <activity
-            android:name=".tugasPertemuan4.DetailArtist"
+            android:name=".Home.tugasPertemuan4.DetailArtist"
             android:exported="false" />
         <activity
-            android:name=".tugasPertemuan3.WelcomePage"
+            android:name=".Home.tugasPertemuan3.WelcomePage"
             android:exported="false" />
         <activity
-            android:name=".tugasPertemuan3.LoginScreen"
+            android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".tugasPertemuan2.RumusBangunan"
+            android:name=".Home.tugasPertemuan2.RumusBangunan"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
