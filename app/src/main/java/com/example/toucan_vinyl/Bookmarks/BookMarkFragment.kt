@@ -20,37 +20,37 @@ class BookMarkFragment : Fragment() {
             "Ado",
             "12 Januari 2025",
             "Tokyo Dome, Jepang",
-            R.drawable.ado
+            "https://static.wikia.nocookie.net/nicodougasingers/images/b/b8/2025.01_%281_-_v1%29.jpg/revision/latest/scale-to-width-down/1000?cb=20250126182908"
         ),
         BookmarksModel(
             "King Gnu",
             "20 Januari 2025",
             "Osaka-Jo Hall, Jepang",
-            R.drawable.king_gnu
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkECkEG_cTnu1Dxe2WhUa2QiRGo_MjjiqwsQ&s"
         ),
         BookmarksModel(
             "Back Number",
             "5 Februari 2025",
             "Saitama Super Arena, Jepang",
-            R.drawable.backnumber
+            "https://i.scdn.co/image/ab6761610000e5eb3f895ff0b36b97f6aba648a7"
         ),
         BookmarksModel(
             "A\$AP Rocky",
             "18 Februari 2025",
             "Madison Square Garden, USA",
-            R.drawable.asap_rocky
+            "https://i.scdn.co/image/ab6761610000e5eb5c58c41a506a0d6b32cc6cad"
         ),
         BookmarksModel(
             "Anri",
             "25 Februari 2025",
             "Nippon Budokan, Jepang",
-            R.drawable.anri
+            "https://i.scdn.co/image/ab67616d00001e02cfd93d36fe2365f9436587d1"
         ),
         BookmarksModel(
             "Kenshi Yonezu",
             "2 Maret 2025",
             "Kyocera Dome, Jepang",
-            R.drawable.kenshi_yonezu
+            "https://i.scdn.co/image/ab67616d0000b273a52ffa7b1ee67275e32d04bc"
         ),
         BookmarksModel(
             "Rionos",

@@ -33,12 +33,12 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.bookmarks -> {
-                    Toast.makeText(this, "Message Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Bookmarks Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.ticket -> {
-                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Ticket List Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
 
