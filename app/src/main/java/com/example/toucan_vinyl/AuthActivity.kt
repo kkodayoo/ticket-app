@@ -12,51 +12,67 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class AuthActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        // Gunakan ViewBinding
         binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Handle window insets untuk status bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.signinbtn.setOnClickListener {
-            val username = binding.usernameInput.text.toString()
-            val password = binding.passwordInput.text.toString()
-            if (username.equals(password)) {
+
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        // Tombol Login
+        binding.btnLogin.setOnClickListener {
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Snackbar.make(binding.root, "Isi username dan password terlebih dahulu", Snackbar.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Login sederhana (username == password)
+            if (username == password) {
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
                 editor.apply()
+
                 val intent = Intent(this, BaseActivity::class.java)
-                intent.putExtra("username", "$username")
-                intent.putExtra("password", "$password")
+                intent.putExtra("username", username)
                 startActivity(intent)
+                finish()
             } else {
                 MaterialAlertDialogBuilder(this)
-                    .setTitle("Konfirmasi")
-                    .setMessage("Silahkan coba lagi")
-                    .setNegativeButton("OK") { dialog, _ ->
+                    .setTitle("Login Gagal")
+                    .setMessage("Username dan password tidak sesuai, silakan coba lagi.")
+                    .setPositiveButton("OK") { dialog, _ ->
                         dialog.dismiss()
-                        Log.e("Info Dialog", "Alert Dialog Ditutup")
                         Snackbar.make(
                             binding.root,
-                            "Silahkan masukkan kembali user yang sesuai",
+                            "Silakan masukkan kembali username dan password yang benar.",
                             Snackbar.LENGTH_LONG
-                        )
-                            .setAction("Tutup") {
-                                Log.e("Info Snackbar", "Snackbar ditutup")
-                            }
-                            .show()
-                        Log.e("Info Snackbar", "Snackbar dibuka")
+                        ).setAction("Tutup") {
+                            Log.d("AuthActivity", "Snackbar ditutup")
+                        }.show()
                     }
                     .show()
-                Log.e("Info Dialog", "Alert Dialog Berhasil Dibuka!")
             }
+        }
+        binding.klikRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -110,63 +110,85 @@
                 android:textSize="16sp" />
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Genre Card 1 -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardGenre"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+        <!-- Scroll Horizontal untuk Genre Chips -->
+        <HorizontalScrollView
+            android:id="@+id/genreCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:backgroundTint="@color/grey_transparent"
-            android:clickable="true"
-            android:focusable="true"
+            android:scrollbars="none"
             app:layout_constraintStart_toStartOf="@id/searchBar"
             app:layout_constraintTop_toBottomOf="@id/searchBar">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
-                android:text="All"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="16dp"
+                app:singleLine="true"
+                app:singleSelection="false">
 
-        <!-- Genre Card 2 -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardGenre2"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintStart_toEndOf="@id/cardGenre"
-            app:layout_constraintTop_toTopOf="@id/cardGenre">
+                <!-- Genre 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGenre"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/timely" />
-        </com.google.android.material.card.MaterialCardView>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="genre_image_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/hihgjack" />
+                </com.google.android.material.card.MaterialCardView>
 
-        <!-- Genre Card 3 -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardGenre3"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintStart_toEndOf="@id/cardGenre2"
-            app:layout_constraintTop_toTopOf="@id/cardGenre">
+                <!-- Genre 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGenre2"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ado" />
-        </com.google.android.material.card.MaterialCardView>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="genre_image_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/timely" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Genre 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGenre3"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="genre_image_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ado" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -174,6 +196,6 @@
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardGenre2" />
+            app:layout_constraintTop_toBottomOf="@+id/genreCardView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

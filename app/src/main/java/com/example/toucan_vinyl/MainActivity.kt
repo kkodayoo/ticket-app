@@ -32,14 +32,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            title = "Main Activity"
-            subtitle = "Tombol Akses Halaman"
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
-        }
         binding.webviewButton.setOnClickListener {
             val i = Intent(this, WebViewActivity::class.java)
             startActivity(i)
