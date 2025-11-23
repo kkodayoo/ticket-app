@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
@@ -89,13 +90,18 @@ class Dashboard3 : AppCompatActivity() {
             try {
                 // PANGGIL API
                 val concerts = ConcertApiClient.apiService.getConcerts()
+                val shuffledConcerts = concerts.shuffled()
 
                 Log.d("API_RESULT", "Total item: ${concerts.size}")
 
                 // SETUP RECYCLER VIEW
                 val adapter = ConcertAdapter(concerts)
-                binding.rvConcert.layoutManager = GridLayoutManager(this@Dashboard3,3)
+                val shuffledadapter = ConcertAdapter(shuffledConcerts)
+//                binding.rvConcert.layoutManager = GridLayoutManager(this@Dashboard3,3)
+                binding.rvConcert.layoutManager = LinearLayoutManager(this@Dashboard3, LinearLayoutManager.HORIZONTAL, false)
                 binding.rvConcert.adapter = adapter
+                binding.rvRecommended.layoutManager = LinearLayoutManager(this@Dashboard3, LinearLayoutManager.HORIZONTAL, false)
+                binding.rvRecommended.adapter = shuffledadapter
 
             } catch (e: Exception) {
                 e.printStackTrace()

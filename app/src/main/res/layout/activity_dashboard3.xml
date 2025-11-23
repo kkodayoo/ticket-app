@@ -23,10 +23,9 @@
             android:background="@color/red_button"
             app:titleTextColor="@android:color/white"
             app:subtitleTextColor="@android:color/white" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- MAIN SCROLL CONTENT -->
+    <!-- Main Scrollable Content -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Header -->
+            <!-- Header Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/headerCard"
                 android:layout_width="0dp"
@@ -52,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
+                    <!-- User Avatar -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/userAvatar"
                         android:layout_width="64dp"
@@ -67,6 +67,7 @@
                             android:src="@drawable/app_icon" />
                     </androidx.cardview.widget.CardView>
 
+                    <!-- Greeting Text -->
                     <TextView
                         android:id="@+id/heyText"
                         android:layout_width="wrap_content"
@@ -78,6 +79,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <!-- Name Text -->
                     <TextView
                         android:id="@+id/nameText"
                         android:layout_width="wrap_content"
@@ -92,7 +94,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Search -->
+            <!-- Search Bar -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/searchBar"
                 android:layout_width="0dp"
@@ -132,6 +134,7 @@
                     android:paddingEnd="8dp"
                     android:orientation="horizontal">
 
+                    <!-- Genre Cards -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardGenre"
                         android:layout_width="120dp"
@@ -189,6 +192,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/genreCardView" />
 
+            <!-- Popular Section -->
             <TextView
                 android:id="@+id/Popular"
                 android:layout_width="wrap_content"
@@ -199,11 +203,9 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:fontFamily="@font/roboto_extrabold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.029"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fragment_container" />
-            <!-- RecyclerView (NO SCROLLING) -->
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvConcert"
                 android:layout_width="0dp"
@@ -212,11 +214,33 @@
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintTop_toBottomOf="@id/Popular"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Recommended Section -->
+            <TextView
+                android:id="@+id/Recommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Recommended For You"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_extrabold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvConcert" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecommended"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/Recommended"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
