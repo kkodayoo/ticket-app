@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleTab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Format Penyimpanan .ONNX"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_extrabold"
+                android:textSize="28sp"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:id="@+id/contentTab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Model disimpan dalam format .onnx dengan struktur graph yang berisi node operasi, weight, input, dan output. Berkas .onnx ini bersifat portable dan dapat dijalankan di berbagai environment yang mendukung ONNX Runtime.\n\nFormat .onnx menyimpan:\n• Arsitektur model\n• Parameter (weight and bias)\n• Daftar operasi (ops) dan versi opset\n• Informasi input-output\n\nHal ini memudahkan proses inference yang cepat dan stabil."
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

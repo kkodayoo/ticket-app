@@ -9,7 +9,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.toucan_vinyl.Bookmarks.BookMarkFragment
 import com.example.toucan_vinyl.Home.HomeFragment
-import com.example.toucan_vinyl.TicketList.TicketListFragment
+import com.example.toucan_vinyl.Home.artist.ArtistsListFragment
+import com.example.toucan_vinyl.Wiki.WikiFragment
 import com.example.toucan_vinyl.databinding.ActivityBaseBinding
 
 
@@ -42,6 +43,11 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.wiki -> {
+                    Toast.makeText(this, "Ticket List Clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
                 else -> false // return false jika item tidak ada yang di klik
             }
         }
@@ -55,12 +61,17 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.ticket -> {
-                    replaceFragment(TicketListFragment())
+                    replaceFragment(ArtistsListFragment())
                     true
                 }
 
                 R.id.bookmarks -> {
                     replaceFragment(BookMarkFragment())
+                    true
+                }
+
+                R.id.wiki -> {
+                    replaceFragment(WikiFragment())
                     true
                 }
 

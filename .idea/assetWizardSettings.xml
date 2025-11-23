@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/alternate_email/outline_alternate_email_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/format_list_bulleted/outline_format_list_bulleted_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,7 +34,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_email" />
+                            <entry key="outputName" value="ic_list" />
                             <entry key="sourceFile" value="C:\Users\Administrator\Downloads\ic_ticket.svg" />
                           </map>
                         </option>

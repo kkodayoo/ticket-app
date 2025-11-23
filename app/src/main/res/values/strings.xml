@@ -17,4 +17,24 @@
     <string name="backnumberdesc">Back Number (バックナンバー; Bakku Nambā) is a Japanese rock power trio formed in 2004. The band consists of Iyori Shimizu (lead vocals, guitar), Kazuya Kojima (bass guitar, backing vocals), and Hisashi Kurihara (drums, percussion). The group signed to independent record label Idolsmith Recordings in 2009 and released their debut EP Nogashita Sakana (逃した魚, Fish Set Free) (2009) and studio album Ato no Matsuri (あとのまつり, Too Late) (2010). They signed to Universal Sigma in 2011. The band have a major cult following in Japan. The group\'s biggest hit is "Christmas Song" [ja], which peaked at number-one for three weeks on the Japan Hot 100 chart, and was later certified million by the Recording Industry Association of Japan. Their first compilation album, Encore (2016), reached number one on the Billboard Japan Hot Album for two consecutive weeks in 2016 and also ranked number five on the Oricon yearly best-selling album chart of 2017. In 2018, back number successfully held a Dome Tour titled “stay with you”, including a 2-night-concert in Tokyo Dome. All tickets for 5 concerts are sold out within 2 hours, mobilized over 45,000 guests per concert.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dataset_text">
+Dataset yang digunakan dalam project ini berasal dari file concerts.csv, yang berisi riwayat pertunjukan NY Philharmonic. Dataset ini mencakup informasi mengenai tanggal konser, musim (season), lokasi penyelenggaraan, serta daftar karya musik yang dibawakan.
+\n
+Pemilihan dataset ini didasarkan pada kelengkapan data historis dan keberagaman fitur yang relevan untuk analisis kebutuhan tiket. Data mencakup variabel waktu, lokasi, serta karakteristik acara, sehingga dapat dimanfaatkan untuk memahami pola permintaan dan perilaku penonton.
+\n
+Fitur yang digunakan dari dataset antara lain:\n
+• season dan date sebagai indikator waktu.\n
+• venue sebagai lokasi konser.\n
+• workTitle, composer, dan movement sebagai deskripsi program acara.\n
+• Tambahan label seperti kategori tiket atau segmentasi pengguna (jika ditambahkan pada tahap preprocessing).\n
+\n
+Output yang diharapkan dari model meliputi:\n
+• Prediksi tingkat permintaan tiket berdasarkan pola historis.\n
+• Rekomendasi acara yang relevan bagi pengguna.\n
+• Klasifikasi tipe tiket atau segmentasi audiens.\n
+\n
+Integrasi ONNX dilakukan dengan cara melatih model menggunakan fitur-fitur di atas, kemudian mengekspornya ke format .onnx. Model ONNX tersebut akan dijalankan di aplikasi mobile menggunakan ONNX Runtime.
+
+</string>
+
 </resources>

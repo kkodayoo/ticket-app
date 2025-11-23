@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Toucanvinyl"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Home.artist.ArtistsList"
+            android:exported="true" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -39,7 +42,7 @@
             android:name=".Home.tugasPertemuan5.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".Home.tugasPertemuan4.Dashboard2"
+            android:name=".Home.tugasPertemuan4.Dashboard3"
             android:exported="true" />
         <activity
             android:name=".Home.tugasPertemuan4.Dashboard"
@@ -58,9 +61,6 @@
             android:exported="false" />
         <activity
             android:name=".Home.tugasPertemuan2.RumusBangunan"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

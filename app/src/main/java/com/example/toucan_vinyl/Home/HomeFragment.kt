@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.toucan_vinyl.AuthActivity
 import com.example.toucan_vinyl.Home.tugasPertemuan2.RumusBangunan
 import com.example.toucan_vinyl.Home.tugasPertemuan4.Dashboard
+import com.example.toucan_vinyl.Home.tugasPertemuan4.Dashboard3
 import com.example.toucan_vinyl.Home.tugasPertemuan4.DetailArtist
 import com.example.toucan_vinyl.Home.tugasPertemuan5.WebViewActivity
 import com.example.toucan_vinyl.R
@@ -79,7 +80,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         binding.custom2Button.setOnClickListener {
-            val intent = Intent(requireContext(), Dashboard::class.java)
+            val intent = Intent(requireContext(), Dashboard3::class.java)
             intent.getStringExtra("username")
             intent.putExtra("username", "$username")
             startActivity(intent)
