@@ -1,5 +1,6 @@
 package com.example.toucan_vinyl.Home.tugasPertemuan4
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.toucan_vinyl.Data.Api.ConcertApiClient
 import com.example.toucan_vinyl.Home.concert.ConcertAdapter
+import com.example.toucan_vinyl.Home.tugasPertemuan5.WebViewActivity
 import com.example.toucan_vinyl.Home.tugasPertemuan6.JpopFragment
 import com.example.toucan_vinyl.Home.tugasPertemuan6.RecommendFragment
 import com.example.toucan_vinyl.Home.tugasPertemuan6.UtaFragment
@@ -74,6 +76,23 @@ class Dashboard : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
+
+            R.id.action_search -> {
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_settings -> {
+                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_webview -> {
+                val i = Intent(this, WebViewActivity::class.java)
+                startActivity(i)
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

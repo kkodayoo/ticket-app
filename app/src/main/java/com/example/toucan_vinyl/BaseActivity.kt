@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.toucan_vinyl.Bookmarks.BookMarkFragment
 import com.example.toucan_vinyl.Home.HomeFragment
 import com.example.toucan_vinyl.Home.artist.ArtistsListFragment
+import com.example.toucan_vinyl.User.Payment.PaymentFragment
 import com.example.toucan_vinyl.Wiki.WikiFragment
 import com.example.toucan_vinyl.databinding.ActivityBaseBinding
 
@@ -44,7 +45,11 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.wiki -> {
-                    Toast.makeText(this, "Ticket List Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Wiki Clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.user -> {
+                    Toast.makeText(this, "User Menu Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
 
@@ -72,6 +77,11 @@ class BaseActivity : AppCompatActivity() {
 
                 R.id.wiki -> {
                     replaceFragment(WikiFragment())
+                    true
+                }
+
+                R.id.user -> {
+                    replaceFragment(PaymentFragment())
                     true
                 }
 

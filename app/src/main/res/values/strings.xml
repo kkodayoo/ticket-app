@@ -10,7 +10,10 @@
     <string name="waktu_konser">Waktu Konser</string>
     <string name="hey">Hey,</string>
     <string name="search">Search</string>
-    <string name="kinggnu_desc">King Gnu is a Japanese band formed in 2013. It consists of Daiki Tsuneta (vocalist and guitarist), Satoru Iguchi (vocalist and keyboardist), Kazuki Arai (bassist) and Yu Seki (drummer). The band\'s main songwriter is Daiki Tsuneta, who also performs as part of the creative collective Millennium Parade.</string>
+    <string name="kinggnu_desc">King Gnu is a Japanese band formed in 2013. It consists of Daiki Tsuneta
+        (vocalist and guitarist), Satoru Iguchi (vocalist and keyboardist), Kazuki Arai (bassist) and
+        Yu Seki (drummer). The band\'s main songwriter is Daiki Tsuneta, who also performs as
+        part of the creative collective Millennium Parade.</string>
     <string name="get_started">Get Started</string>
     <string name="appName">CONCERTO</string>
     <string name="by_rafli_mulki">by Rafli Mulki</string>

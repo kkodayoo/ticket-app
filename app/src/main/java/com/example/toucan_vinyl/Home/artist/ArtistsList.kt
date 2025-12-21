@@ -1,11 +1,16 @@
 package com.example.toucan_vinyl.Home.artist
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
@@ -20,16 +25,42 @@ class ArtistsList : AppCompatActivity() {
 
     private lateinit var binding: ActivityArtistDetailBinding
 
+    /**
+     * Launcher permission notifikasi (Android 13+)
+     */
+    private val notificationPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                Toast.makeText(
+                    this,
+                    "Izin notifikasi diberikan",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    this,
+                    "Notifikasi ditolak, reminder mungkin tidak tampil",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         binding = ActivityArtistDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Edge-to-edge support
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(
+                systemBars.left,
+                systemBars.top,
+                systemBars.right,
+                systemBars.bottom
+            )
             insets
         }
 
@@ -42,7 +73,25 @@ class ArtistsList : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
+        // 🔔 Cek & minta izin notifikasi
+        checkNotificationPermission()
+
+        // Load data artis
         loadArtistsFromApi()
+    }
+
+    /**
+     * Cek permission POST_NOTIFICATIONS (WAJIB Android 13+)
+     */
+    private fun checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permission = Manifest.permission.POST_NOTIFICATIONS
+            if (ContextCompat.checkSelfPermission(this, permission)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                notificationPermissionLauncher.launch(permission)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -55,20 +104,26 @@ class ArtistsList : AppCompatActivity() {
         }
     }
 
+    /**
+     * Ambil data artis dari API dan tampilkan ke RecyclerView
+     */
     private fun loadArtistsFromApi() {
         lifecycleScope.launch {
             try {
-                val artists: List<ConcertModel> = ConcertApiClient.apiService.getConcerts()
+                val artists: List<ConcertModel> =
+                    ConcertApiClient.apiService.getConcerts()
+
                 Log.d("API_RESULT", "Total artis: ${artists.size}")
 
-                // Setup RecyclerView (pastikan rvConcert ada di layout)
                 val adapter = ArtistsAdapter(artists)
-                binding.rvConcert.layoutManager = LinearLayoutManager(this@ArtistsList)
-                binding.rvConcert.adapter = adapter
+
+                binding.rvConcert.apply {
+                    layoutManager = LinearLayoutManager(this@ArtistsList)
+                    this.adapter = adapter
+                }
 
             } catch (e: Exception) {
-                e.printStackTrace()
-                Log.e("API_ERROR", "Error: ${e.message}")
+                Log.e("API_ERROR", "Error: ${e.message}", e)
                 Toast.makeText(
                     this@ArtistsList,
                     "Gagal memuat data artis",

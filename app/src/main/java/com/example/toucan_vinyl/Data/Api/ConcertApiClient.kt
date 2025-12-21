@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ConcertApiClient {
 
-    private const val BASE_URL = "https://qonfkqxbvdamulcnftir.supabase.co/rest/v1/"
+    private const val BASE_URL = "https://qonfkqxbvdamulcnftir.supabase.co"
     private const val API_KEY =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbmZrcXhidmRhbXVsY25mdGlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4Njc5OTYsImV4cCI6MjA3OTQ0Mzk5Nn0.rrm7T1YeOcic6qaSACRQZbBkmiK0azSPSnMxLkD6bKw"
 
