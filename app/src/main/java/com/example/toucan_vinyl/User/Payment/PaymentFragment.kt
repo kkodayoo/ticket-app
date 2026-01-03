@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+//import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.example.toucan_vinyl.R
 import com.example.toucan_vinyl.Data.AppDatabase
 import com.example.toucan_vinyl.Data.Model.MenuItem
-import com.example.toucan_vinyl.Data.entity.PaymentEntity
-import com.example.toucan_vinyl.User.Scans.ScanFragment
+//import com.example.toucan_vinyl.Data.entity.PaymentEntity
+//import com.example.toucan_vinyl.User.Scans.ScanFragment
 import com.example.toucan_vinyl.User.Scans.TicketscanFragment
 import com.example.toucan_vinyl.databinding.FragmentPaymentBinding
 import com.example.toucan_vinyl.utils.dp
-import kotlinx.coroutines.launch
+//import kotlinx.coroutines.launch
 
 class PaymentFragment : Fragment() {
 
@@ -26,7 +26,7 @@ class PaymentFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var db: AppDatabase
-    private lateinit var paymentAdapter: PaymentAdapter
+//    private lateinit var paymentAdapter: PaymentAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,15 +42,16 @@ class PaymentFragment : Fragment() {
         db = AppDatabase.getInstance(requireContext())
 
         setupMenu()
-        setupPaymentList()
-        loadPayments()
+//        setupPaymentList()
+//        loadPayments()
     }
 
     private fun setupMenu() {
         val menuItems = listOf(
             MenuItem("Edit Profile", R.drawable.ic_edit, PaymentFormFragment()),
             MenuItem("Account Settings", R.drawable.ic_user, PaymentFormFragment()),
-            MenuItem("Payment Methods", R.drawable.ic_email, PaymentFormFragment()),
+            MenuItem("Add Payment Methods", R.drawable.ic_email, PaymentFormFragment()),
+            MenuItem("Payment Methods", R.drawable.ic_email, PaymentList()),
             MenuItem("Tickets", R.drawable.ic_info, TicketscanFragment()),
             MenuItem("Privacy & Security", R.drawable.ic_more, PaymentFormFragment()),
             MenuItem("About Application", R.drawable.ic_info, PaymentFormFragment())
@@ -72,26 +73,21 @@ class PaymentFragment : Fragment() {
         binding.rvMenu.addItemDecoration(divider)
     }
 
-    private fun setupPaymentList() {
-        paymentAdapter = PaymentAdapter(listOf()) { payment ->
-            deletePayment(payment)
-        }
-        binding.rvPayment.adapter = paymentAdapter
-    }
+//    private fun setupPaymentList() {
+//        paymentAdapter = PaymentAdapter(listOf()) { payment ->
+//            deletePayment(payment)
+//        }
+//        binding.rvPayment.adapter = paymentAdapter
+//    }
 
-    private fun loadPayments() {
-        lifecycleScope.launch {
-            val list = db.paymentDao().getAll()
-            paymentAdapter.updateData(list)
-        }
-    }
+//    private fun loadPayments() {
+//        lifecycleScope.launch {
+//            val list = db.paymentDao().getAll()
+//            paymentAdapter.updateData(list)
+//        }
+//    }
 
-    private fun deletePayment(payment: PaymentEntity) {
-        lifecycleScope.launch {
-            db.paymentDao().delete(payment)
-            loadPayments()
-        }
-    }
+//
 
     private fun navigateTo(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
