@@ -15,10 +15,11 @@ object TicketApiClient {
         val request = chain.request().newBuilder()
             .addHeader("apikey", API_KEY)
             .addHeader("Authorization", "Bearer $API_KEY")
-            .addHeader("Content-Type", "application/json")
+            .addHeader("Accept", "application/json")
             .build()
         chain.proceed(request)
     }
+
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(authInterceptor)

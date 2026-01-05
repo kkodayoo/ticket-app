@@ -163,6 +163,7 @@ class ScanFragment : Fragment() {
                 }
 
             } catch (e: Exception) {
+                Log.e("SCAN_API_ERROR", "Fetch ticket failed", e)
                 showError("Gagal menghubungi server")
             }
         }

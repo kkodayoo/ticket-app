@@ -1,5 +1,6 @@
 package com.example.toucan_vinyl.Data.Model
 
+import java.io.Serializable
 data class TicketModel(
     val ticket_code: String,
     val nama_artist: String,
@@ -10,4 +11,4 @@ data class TicketModel(
     val lokasi_kota: String?,
     val lokasi_tempat: String?,
     val status: String = "ACTIVE"
-)
+) : Serializable

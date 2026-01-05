@@ -48,13 +48,9 @@ class PaymentFragment : Fragment() {
 
     private fun setupMenu() {
         val menuItems = listOf(
-            MenuItem("Edit Profile", R.drawable.ic_edit, PaymentFormFragment()),
-            MenuItem("Account Settings", R.drawable.ic_user, PaymentFormFragment()),
             MenuItem("Add Payment Methods", R.drawable.ic_email, PaymentFormFragment()),
             MenuItem("Payment Methods", R.drawable.ic_email, PaymentList()),
-            MenuItem("Tickets", R.drawable.ic_info, TicketscanFragment()),
-            MenuItem("Privacy & Security", R.drawable.ic_more, PaymentFormFragment()),
-            MenuItem("About Application", R.drawable.ic_info, PaymentFormFragment())
+            MenuItem("Tickets", R.drawable.ic_info, TicketscanFragment())
         )
 
         val adapter = UserMenuAdapter(menuItems) { item ->
